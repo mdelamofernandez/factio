@@ -1,0 +1,17 @@
+# Node y React Native
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de compilación de Android e iOS
+/android/app/build/
+/ios/build/
+/ios/Pods/
+
+# Archivos temporales y de sistema
+*.swp
+*.swo
+.DS_Store
+
+# Archivos sensibles o de entorno
+.env
