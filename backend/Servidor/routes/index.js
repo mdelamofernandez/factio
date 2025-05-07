@@ -4,10 +4,15 @@ const db = require('../db');
 
 router.get('/usuario', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM usuarios');
-    res.json(rows);
+    // 1. Corregir la forma de obtener los resultados
+    const result = await db.query('SELECT * FROM usuario'); // 2. Nombre de tabla corregido
+    res.json(result.rows); // 3. Acceder a la propiedad rows
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error('Error en GET /usuario:', error); // 4. Mejor logging
+    res.status(500).json({
+      error: 'Error al obtener usuarios',
+      detalle: error.message
+    });
   }
 });
 
